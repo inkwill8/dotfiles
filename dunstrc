@@ -1,0 +1,247 @@
+# ~/.config/dunst/dunstrc
+# Dunst notification daemon configuration
+
+[global]
+    # Display
+    monitor = 0
+    follow = mouse
+    
+    # Geometry
+    width = (300, 400)
+    height = 300
+    origin = top-right
+    offset = 20x50
+    scale = 0
+    notification_limit = 5
+    
+    # Progress bar
+    progress_bar = true
+    progress_bar_height = 10
+    progress_bar_frame_width = 1
+    progress_bar_min_width = 150
+    progress_bar_max_width = 300
+    
+    # Appearance
+    transparency = 10
+    separator_height = 2
+    padding = 12
+    horizontal_padding = 12
+    text_icon_padding = 12
+    frame_width = 2
+    frame_color = "#8b5cf6"
+    separator_color = frame
+    sort = yes
+    
+    # Text styling
+    font = JetBrains Mono Nerd Font 11
+    line_height = 0
+    markup = full
+    format = "<span weight='bold'>%s</span>\n%b"
+    alignment = left
+    vertical_alignment = center
+    show_age_threshold = 60
+    ellipsize = middle
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = yes
+    
+    # Icons
+    enable_recursive_icon_lookup = true
+    icon_theme = "Papirus-Dark, Adwaita"
+    icon_position = left
+    min_icon_size = 32
+    max_icon_size = 48
+    icon_path = /usr/share/icons/Papirus-Dark/16x16/status/:/usr/share/icons/Papirus-Dark/16x16/devices/:/usr/share/icons/Papirus-Dark/16x16/apps/
+    
+    # History
+    sticky_history = yes
+    history_length = 20
+    
+    # Misc
+    dmenu = /usr/bin/wofi --show dmenu -p dunst:
+    browser = /usr/bin/brave
+    always_run_script = true
+    title = Dunst
+    class = Dunst
+    corner_radius = 12
+    ignore_dbusclose = false
+    force_xwayland = false
+    force_xinerama = false
+    
+    # Mouse actions
+    mouse_left_click = close_current
+    mouse_middle_click = do_action, close_current
+    mouse_right_click = close_all
+
+# Urgency levels with theme colors
+[urgency_low]
+    background = "#0f172a"
+    foreground = "#e2e8f0"
+    frame_color = "#475569"
+    timeout = 5
+    default_icon = "dialog-information"
+
+[urgency_normal]  
+    background = "#1e293b"
+    foreground = "#f8fafc"
+    frame_color = "#8b5cf6"
+    timeout = 8
+    default_icon = "dialog-information"
+
+[urgency_critical]
+    background = "#991b1b"
+    foreground = "#fef2f2"
+    frame_color = "#ef4444"
+    timeout = 0
+    default_icon = "dialog-error"
+
+# Application-specific rules
+[discord]
+    appname = "Discord"
+    background = "#5865f2"
+    foreground = "#ffffff"
+    frame_color = "#4752c4"
+    format = "<span weight='bold'>Discord</span>\n%b"
+    timeout = 6
+
+[steam]
+    appname = "Steam"
+    background = "#1b2838"
+    foreground = "#66c0f4"
+    frame_color = "#2a475e"
+    format = "<span weight='bold'>Steam</span>\n%b"
+    timeout = 6
+
+[spotify]
+    appname = "Spotify"
+    background = "#1db954"
+    foreground = "#000000"
+    frame_color = "#1ed760"
+    format = "<span weight='bold'>♫ Now Playing</span>\n%b"
+    timeout = 4
+
+[volume]
+    appname = "volume"
+    background = "#1e293b"
+    foreground = "#f59e0b"
+    frame_color = "#f59e0b"
+    format = "<span weight='bold'>🔊 Volume</span>\n%b"
+    timeout = 2
+
+[brightness]
+    appname = "brightness"
+    background = "#1e293b" 
+    foreground = "#fbbf24"
+    frame_color = "#f59e0b"
+    format = "<span weight='bold'>☀ Brightness</span>\n%b"
+    timeout = 2
+
+[network]
+    appname = "NetworkManager"
+    background = "#1e293b"
+    foreground = "#06b6d4"
+    frame_color = "#0891b2"
+    format = "<span weight='bold'>📶 Network</span>\n%b"
+    timeout = 4
+
+[battery]
+    appname = "battery"
+    background = "#1e293b"
+    foreground = "#22c55e"
+    frame_color = "#16a34a"
+    format = "<span weight='bold'>🔋 Battery</span>\n%b"
+    timeout = 8
+
+[screenshot]
+    appname = "screenshot"
+    background = "#1e293b"
+    foreground = "#a855f7"
+    frame_color = "#8b5cf6"
+    format = "<span weight='bold'>📸 Screenshot</span>\n%b"
+    timeout = 3
+
+[theme-switch]
+    appname = "Theme Changed"
+    background = "#1e293b"
+    foreground = "#a855f7" 
+    frame_color = "#8b5cf6"
+    format = "<span weight='bold'>🎨 %s</span>\n%b"
+    timeout = 3
+
+# Filtering rules
+[ignore]
+    # Ignore certain spammy notifications
+    appname = "Spotify"
+    summary = "*Advertisement*"
+    skip_display = true
+
+[shortcuts]
+    # Keyboard shortcuts for notification control
+    close = ctrl+space
+    close_all = ctrl+shift+space
+    history = ctrl+grave
+    context = ctrl+shift+period
+
+#═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+# Theme-specific notification styles
+# These will be sourced by the theme switcher
+
+# ~/.config/dunst/themes/dark-space.conf
+[global]
+    frame_color = "#8b5cf6"
+
+[urgency_low] 
+    background = "#0f172a"
+    foreground = "#e2e8f0"
+    frame_color = "#475569"
+
+[urgency_normal]
+    background = "#1e293b" 
+    foreground = "#f8fafc"
+    frame_color = "#8b5cf6"
+
+[urgency_critical]
+    background = "#7c2d12"
+    foreground = "#fef2f2" 
+    frame_color = "#dc2626"
+
+#═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+# ~/.config/dunst/themes/dune-orange.conf
+[global]
+    frame_color = "#f59e0b"
+
+[urgency_low]
+    background = "#1c1917"
+    foreground = "#fef3c7"
+    frame_color = "#78716c"
+
+[urgency_normal]
+    background = "#292524"
+    foreground = "#fef3c7"
+    frame_color = "#f59e0b"
+
+[urgency_critical]
+    background = "#7c2d12"
+    foreground = "#fef2f2"
+    frame_color = "#dc2626"
+
+#═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+# ~/.config/dunst/themes/light.conf
+[global]
+    frame_color = "#2563eb"
+
+[urgency_low]
+    background = "#f8fafc"
+    foreground = "#475569"
+    frame_color = "#cbd5e1"
+
+[urgency_normal]
+    background = "#ffffff"
+    foreground = "#1e293b"
+    frame_color = "#2563eb"
+
+[urgency_critical]
+    background = "#fef2f2"
+    foreground = "#7c2d12"
+    frame_color = "#dc2626"
