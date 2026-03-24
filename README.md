@@ -48,7 +48,7 @@ Here is a list of the main keybindings for your reference. The leader key is `sp
 
 | Keybinding      | Mode   | Description                                |
 | --------------- | ------ | ------------------------------------------ |
-| `<C-n>`         | Normal | Toggle file explorer (Neo-tree)            |
+| `<leader> e`    | Normal | Toggle file explorer (Neo-tree)            |
 | `<leader>ff`    | Normal | Find files (Telescope)                     |
 | `<leader>fg`    | Normal | Live grep (Telescope)                      |
 | `<leader>fb`    | Normal | List open buffers (Telescope)              |
